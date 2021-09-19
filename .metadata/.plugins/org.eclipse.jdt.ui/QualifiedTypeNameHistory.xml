@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="model.dao.ContactDAO"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="model.bean.Contact"/>
+    <fullyQualifiedTypeName name="model.bean.role"/>
+    <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.ResultSet"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="model.dao.NewsDAO"/>
+    <fullyQualifiedTypeName name="model.dao.UserDAO"/>
+    <fullyQualifiedTypeName name="util.StringUtil"/>
+    <fullyQualifiedTypeName name="util.AuthUtil"/>
+    <fullyQualifiedTypeName name="model.dao.RoleDAO"/>
+    <fullyQualifiedTypeName name="java.time.Year"/>
+    <fullyQualifiedTypeName name="java.time.Month"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.dv.xs.YearDV"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="model.bean.Category"/>
+    <fullyQualifiedTypeName name="model.dao.CategoryDAO"/>
+    <fullyQualifiedTypeName name="util.DefineUtil"/>
+    <fullyQualifiedTypeName name="model.bean.News"/>
+    <fullyQualifiedTypeName name="util.DBConnectionUtil"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="model.bean.Comment"/>
+    <fullyQualifiedTypeName name="model.dao.CommentDAO"/>
+    <fullyQualifiedTypeName name="model.bean.Role"/>
+    <fullyQualifiedTypeName name="model.dao.VoteDAO"/>
+    <fullyQualifiedTypeName name="java.nio.file.attribute.UserPrincipalLookupService"/>
+    <fullyQualifiedTypeName name="model.bean.User"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+</qualifiedTypeNameHistroy>

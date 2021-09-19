@@ -1,0 +1,43 @@
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<!-- <!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN" -->
+<!--         "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd"> -->
+
+<!-- <urlrewrite> -->
+
+<!-- 	<rule> -->
+<!-- 			http://localhost:8080/cvietnamwork/detail?id=8&active=1 -->
+<!-- 				http://localhost:8080/cvietnamwork/ten-danh-muc/ten-bai-hat-8/active/1 -->
+<!-- 		<from>(.+)/(.+)-([0-9]+)/(.+)-([0-9]+).html$</from>	khuôn mẫu , đại diện cho url ảo , (.+) đại diện cho ký tự gồm chữ , số || dấu + đại diện cho ký tự || $ : phần kết thúc của dòng -->
+<!-- 		<to>/detail?id=$3&amp;active=$5</to>	url gốc ||   $3 : lấy ở biểu thức chính quy thứ 3 :([0-9]+)  -->
+<!-- 	</rule> -->
+
+<!-- 	<rule> -->
+<!-- 			 http://localhost:8080/cvietnamwork/cat?cat_id=1&active=1&page=1	 -->
+<!-- 				http://localhost:8080/bsong/ten-danh-muc-8/active-1/page-2 -->
+<!-- 		<from>(.+)-([0-9]+)/active-([0-9]+)/page-([0-9]+)$</from>	 -->
+<!-- 		<to>/cat?catId=$2&amp;active=$4&amp;page=$6</to>			&amp; : html entity của & -->
+<!-- 	</rule> -->
+	
+<!-- 	<rule> -->
+<!-- 			 http://localhost:8080/cvietnamwork/cat?cat_id=1&active=1 -->
+<!-- 				 http://localhost:8080/cvietnamwork/ten-danh-muc-1/active-1   -->
+<!-- 		<from>/(.+)-([0-9]+)/active-([0-9]+)$</from>	 -->
+<!-- 		<to>/cat?cat_id=$2&amp;active=$4</to>	 -->
+<!-- 	</rule> -->
+	
+<!-- 	<rule> -->
+<!-- 			http://localhost:8080/cvietnamwork/index?headerActive=1&page=1	 -->
+<!-- 		 		http://localhost:8080/cvietnamwork/index?headerActive-1/page-1   -->
+<!-- 		<from>/headerActive-([0-9]+)/page-([0-9]+)$</from>	 -->
+<!-- 		<to>/index?headerActive=$2&amp;page=$4</to>				 trang gốc -->
+<!-- 	</rule> -->
+	
+<!-- 	<rule> -->
+<!-- 	 	 http://localhost:8080/cvietnamwork/contact?headerActive=2  -->
+<!-- 			http://localhost:8080/cvietnamwork/lien-he/headerActive-2		 -->
+<!-- 		<from>/lien-he/headerActive-([0-9]+)$</from>	 -->
+<!-- 		<to>/contact?headerActive=$3</to>	 -->
+<!-- 	</rule> -->
+	
+<!-- </urlrewrite> -->
+

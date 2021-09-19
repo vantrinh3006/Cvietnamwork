@@ -1,0 +1,262 @@
+.wrapper{
+	
+}
+.wrapper .header{
+	background: #00B9F2;
+	padding-top: 10px;
+	padding-bottom:10px;
+}
+.wrapper .header  .logo{
+	
+}
+
+.wrapper .header  .logo a{
+	text-decoration:none;
+	padding-left: 20px;
+	font-size:32px;
+	color:white;
+	
+}
+.wrapper .header  .login{
+
+}
+.wrapper .header  .login span{
+	font-size: 18px;
+	padding-left: 963px;
+	color: yellow; 
+}
+.wrapper .header .login a{
+	text-decoration: none;
+	font-size: 20px;
+	padding-left: 47px;
+	color:white;
+	
+}
+.wrapper  .left-bar{
+	float: left;
+	width: 20%;
+	border-right: 1px solid ;
+	border-bottom: 1px solid ;
+	background-color: #F7F7F7;
+	
+}
+.wrapper  .left-bar .index{
+	margin-top: 70px;
+	margin-bottom: 70px;
+	
+}
+.wrapper  .left-bar div a{
+	text-decoration: none;
+	font-size: 28px;
+	padding-left: 20px;
+}
+.wrapper  .left-bar div{
+	margin-top: 70px;
+	margin-bottom: 70px;
+	
+}
+.wrapper  .left-bar .index-active a{
+	text-decoration: none;
+	font-size: 28px;
+	padding-left: 20px;
+	color:red;
+}
+.wrapper  .left-bar .cat-active a{
+	text-decoration: none;
+	font-size: 28px;
+	padding-left: 20px;
+	color:red;
+}
+.wrapper  .left-bar .news-active a{
+	text-decoration: none;
+	font-size: 28px;
+	padding-left: 20px;
+	color:red;
+}
+.wrapper  .left-bar .contact-active a{
+	text-decoration: none;
+	font-size: 28px;
+	padding-left: 20px;
+	color:red;
+}
+.wrapper  .left-bar .user-active a{
+	text-decoration: none;
+	font-size: 28px;
+	padding-left: 20px;
+	color:red;
+}
+.wrapper  .left-bar .comment-active a{
+	text-decoration: none;
+	font-size: 28px;
+	padding-left: 20px;
+	color:red;
+}
+
+.wrapper .bodyIndex{
+	float: right;
+	width: 70%;
+}
+.wrapper .bodyIndex div{
+	margin-top: 30px;
+	
+}
+.wrapper .bodyIndex div h1{
+	padding-left: 318px;
+}
+.wrapper .bodyCat{
+	float: right;
+	width: 79%;
+}
+.wrapper .bodyCat .title{
+	
+}
+.wrapper .bodyCat .title h2{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.wrapper .bodyCat .function{
+	margin-top: 20px;
+}
+.wrapper .bodyCat .function .left{
+	float:left;
+	width:60%
+}
+.wrapper .bodyCat .function .left a{
+	text-decoration:none;
+	background-color: #5CB85C;
+	color: white;
+	padding: 13px 13px 13px 13px;
+	font-size:20px;
+}
+.wrapper .bodyCat .function .right{
+	float:right;
+	width:40%
+}
+.wrapper .bodyCat .function .right #form{
+	padding-left:70px;
+}
+.wrapper .bodyCat .function .right #form input{
+	font-size:20px;
+}
+.wrapper .bodyCat .function .right #form button{
+	font-size:20px;
+}
+.wrapper .bodyCat .table{
+	margin-top:20px;
+	padding-left: 20px;
+	padding-right:10px;
+}
+.wrapper .bodyCat .table table{
+	font-size:18px;
+	border:1px solid;
+	border-collapse:collapse;
+	
+}
+.wrapper .bodyCat .table table .title {
+	
+	
+}
+.wrapper .bodyCat .table table .info{
+	
+}
+.wrapper .bodyCat .table table .title th{
+	border:1px solid;
+	height:30px;
+	width:150px;
+	text-align:center;
+	vertical-align:center;
+}
+.wrapper .bodyCat .table table  .info td{
+	border:1px solid;
+	height:30px;
+	text-align:center;
+	vertical-align:center;
+}
+.wrapper .bodyCat .table table .info td .edit{
+	text-decoration:none;
+	padding-left: 20px;
+	color:#2ECCFA;
+}
+.wrapper .bodyCat .table table .info td .del{
+	text-decoration:none;
+	padding-left: 20px;
+	color: red;
+}
+.wrapper .bodyAddCat{
+	float: right;
+	width: 79%;			
+}
+.wrapper .bodyAddCat .title {
+
+}
+.wrapper .bodyAddCat .title h2{
+	margin-top:20px;
+}
+.wrapper .bodyAddCat .addForm{
+	
+}
+.wrapper .bodyAddCat .addForm{
+	margin-top:20px;
+}
+.wrapper .bodyAddCat .addForm input{
+	font-size: 20px;
+}
+.wrapper .bodyAddCat .addForm button{
+	font-size: 20px;	
+}
+.wrapper .bodyAddCat .addForm{
+	font-size:20px;
+}
+.wrapper .bodyAddCat .addForm #form{
+
+}
+.wrapper .bodyAddCat .addForm #form .addNews{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.wrapper .bodyAddCat .addForm #form .addNews label{
+	
+
+}
+.wrapper .bodyAddCat .addForm #form .addNews input{
+
+}
+.wrapper .bodyAddCat .addForm #form .addNews select{
+	font-size:20px;	
+}
+.wrapper .bodyAddCat .addForm #form .addNews .button{
+	
+}
+.wrapper .bodyCat .page{
+	margin-top:41px;
+	margin-left:1000px;
+
+
+}
+.wrapper .bodyCat .page a{
+	text-decoration:none;
+	font-size:20px;
+}
+.wrapper .bodyCat .page .active{
+	border: 1px solid;
+	background-color:#E6E6E6;
+	font-size:20px;
+	font-weight:bold
+}
+
+
+.wrapper .footer{
+	background-color: #C1C1C1; 
+	height: 106px;
+	padding-top:50px;
+	margin-top:20px;
+}
+.wrapper .footer span{
+	font-size: 20px;
+	padding-left:606px;
+	
+}
+.clr{
+	clear:both;
+}
+

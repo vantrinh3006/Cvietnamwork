@@ -1,0 +1,82 @@
+<%@page import="util.AuthUtil"%>
+<%@page import="model.bean.Comment"%>
+<%@page import="model.bean.News"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/templates/public/inc/header.jsp" %>
+<%@ include file="/templates/public/inc/left-bar.jsp" %>
+
+<div class="bodyCat">
+				<div class="title"><h2>Thông tin người dùng</h2></div>
+				<%	String err = request.getParameter("err");
+					String msg = request.getParameter("msg");
+					if("1".equals(err)){
+        				out.print("<span style=\"background: yellow; color: red; font-weight: bold; padding: 5px; \">ID không tồn tại - Không tồn tại đối tượng </span>");
+        			}
+					if("4".equals(err)){
+        				out.print("<span style=\"background: yellow; color: red; font-weight: bold; padding: 5px; \">Không tìm thấy user trên Database</span>");
+        			}
+					if("5".equals(err)){
+        				out.print("<span style=\"background: yellow; color: red; font-weight: bold; padding: 5px; \">Sửa người dùng thất bại</span>");
+        			}
+					if("3".equals(msg)){
+        				out.print("<span style=\"background: yellow; color: blue; font-weight: bold; padding: 5px; \">Sửa người dùng thành công </span>");
+        			}
+        		%>
+				<div class="function">
+					<div class="left"></div>
+					<div class="right">
+						<form action="" method="post"  id="form">
+						</form>
+					</div>
+					<div class="clr"></div>
+				</div>
+				<div class="table">
+					<table>
+						<tr class="title">
+							<th>ID</th>
+							<th>UserName</th>
+							<th>PassWord</th>
+							<th>FullName</th>
+							<th>Email</th>
+							<th>Chức vụ</th>
+							<th>Chức năng</th>
+						</tr>
+						<tr class="info">
+							<td><%=userLogin.getId() %></td>
+							<td><%=userLogin.getUsername() %></td>
+							<td><%=userLogin.getPassword() %></td>
+							<td><%=userLogin.getFullname() %></td>
+							<td><%=userLogin.getEmail() %></td>
+							<td><%=userLogin.getRole().getName()%></td>
+							
+							<td>
+							<% 	 if(userLogin.getId()==userLogin.getId()){  %>
+								<a href="<%=request.getContextPath() %>/admin/user/edit?id=<%=userLogin.getId() %>" class="edit">Sửa </a>
+							<% } %>
+
+
+
+<div class="body">
+				<div class="cat">
+					<span></span>
+				</div>
+				<div class="news">
+					<ul>
+						<li class="info"><span>ID:</span> <%=userLogin.getId() %></li>
+						<li class="info"><span>UserName</span> <%=userLogin.getUsername() %></li>
+						<li class="info"><span>PassWord</span> <%=userLogin.getPassword() %></li>
+						<li class="info"><span>FullName</span> <%=userLogin.getFullname() %></li>
+						<li class="info"><span>Email</span> <%=userLogin.getEmail() %></li>
+						<li class="info"><span>Chức vụ</span> <%=userLogin.getRole().getName() %></li>
+						<li class="info"><span>Chức năng</span> </li>
+					</ul>
+				<%} }else{%>
+					Không có dữ liệu
+				<%} %>
+
+				</div>	
+			</div>
+			<div class="clr"></div>
+<%@ include file="/templates/public/inc/footer.jsp" %>

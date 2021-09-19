@@ -1,0 +1,237 @@
+package model.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import model.bean.Category;
+import model.bean.Comment;
+import model.bean.Role;
+import model.bean.User;
+import util.DBConnectionUtil;
+import util.DefineUtil;
+
+
+public class CommentDAO {
+	private Connection conn;
+	private PreparedStatement pst;
+	private ResultSet rs;
+	private Statement st;
+	
+	public int addItem(Comment obj) {
+		int result = 0;
+		conn = DBConnectionUtil.getConnection();
+		String query = "INSERT INTO comments(message, news_id, user_id) VALUES(?,?,?)";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setString(1, obj.getMessage());
+			pst.setInt(2, obj.getNews_id());
+			pst.setInt(3, obj.getUser().getId());
+			
+			result = pst.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (pst != null && conn != null) {
+				try {
+					pst.close();
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
+
+	public ArrayList<Comment> getItems(int news_id) {
+		ArrayList<Comment> items = new ArrayList<Comment>();
+		conn = DBConnectionUtil.getConnection();
+		String query = "SELECT comments.id, message, news_id, user_id, users.fullname FROM comments INNER JOIN users ON  user_id = users.id   WHERE news_id=? ORDER BY id DESC";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setInt(1, news_id);
+			rs = pst.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt(1);
+				String message = rs.getString(2);
+				User user = new User(rs.getInt(4), null, null, rs.getString(5), null, null);
+				Comment obj = new Comment(0, message, news_id, user);
+				items.add(obj);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (pst != null && rs != null && conn != null) {
+				try {
+					pst.close();
+					rs.close();
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return items;
+		
+	}
+
+	public int numberOfItems() {
+		int number = 0;
+		conn = DBConnectionUtil.getConnection();
+		String query = "SELECT COUNT(*) AS count FROM comments";
+		try {
+			pst = conn.prepareStatement(query);
+			rs = pst.executeQuery();
+			if(rs.next()) {
+				number = rs.getInt("count");
+				return number;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return number;
+	}
+
+	public ArrayList<Comment> getItemsPagination(int offset) {
+		ArrayList<Comment> items = new ArrayList<Comment>();
+		conn = DBConnectionUtil.getConnection();
+		String query = "SELECT comments.id, message, news_id, users.role_id , users.name, user_id, users.fullname FROM comments INNER JOIN users ON user_id = users.id ORDER BY id DESC LIMIT ?,? ";
+		try {
+			pst=conn.prepareStatement(query);
+			pst.setInt(1, offset);
+			pst.setInt(2, DefineUtil.NUMBER_PER_PAGE);
+			rs = pst.executeQuery();
+			while(rs.next()) {
+				int id = rs.getInt(1);
+				String message = rs.getString(2);
+				int news_id = rs.getInt(3);
+				Role role = new Role( rs.getInt(4), rs.getString(5));
+				User user = new User(rs.getInt(6), null, null, rs.getString(7), null, role);
+				Comment item = new Comment(id, message, news_id, user);
+				items.add(item);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(rs !=  null && pst != null && st  != null) {
+				try {
+					rs.close();
+					pst.close();
+					st.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+			}
+		}
+		return items;
+	}
+
+	public int editItem(Comment comment) {
+		int result = 0 ;
+		conn = DBConnectionUtil.getConnection();
+		String query = "UPDATE comments SET message = ? WHERE id = ?";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setString(1, comment.getMessage());
+			pst.setInt(2, comment.getId());
+			
+			result = pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pst != null && st != null && rs != null) {
+				try {
+					pst.close();
+					st.close();
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
+
+	public Comment getItem(int id) {
+		Comment item = null ;
+		conn = DBConnectionUtil.getConnection();
+		String query = "SELECT * FROM comments WHERE id =?";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setInt(1, id);
+			rs = pst.executeQuery();
+			if(rs.next()) {
+				String message = rs.getString(2);
+				item = new Comment(id, message, 0, null);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pst != null && st != null && rs != null) {
+				try {
+					pst.close();
+					st.close();
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return item;
+	}
+
+	public int DelItem(int id) {
+		int result = 0 ;
+		conn = DBConnectionUtil.getConnection();
+		String query = "DELETE FROM comments WHERE id = ?";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setInt(1, id);
+			
+			result = pst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(pst != null && st != null && rs != null) {
+				try {
+					pst.close();
+					st.close();
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return result;
+	}
+
+	public int numberOfItems(int user_id) {
+		int number = 0;
+		conn = DBConnectionUtil.getConnection();
+		String query = "SELECT COUNT(*) AS count FROM comments WHERE user_id = ?";
+		try {
+			pst = conn.prepareStatement(query);
+			pst.setInt(1, user_id);
+			rs = pst.executeQuery();
+			if(rs.next()) {
+				number = rs.getInt("count");
+				return number;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return number;
+	}
+	
+	
+}

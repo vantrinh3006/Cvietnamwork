@@ -1,0 +1,468 @@
+.wrapper{
+	font-family:arial;
+}
+.wrapper .header{
+	background: #00B9F2;
+	padding-top: 10px;
+	padding-bottom:10px;
+}
+.wrapper .header .image #img{
+	width:1120px;
+	height:212px;
+	padding-left:214px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.wrapper .header .logo{
+
+}
+.wrapper .header .logo a{
+	text-decoration:none;
+	padding-left: 20px;
+	font-size:32px;
+	color:white;
+	
+}
+.wrapper .header .index{
+	margin-left:396px;
+}
+.wrapper .header .postnews{
+	margin-left:125px;
+}
+.wrapper .header .contact{
+	margin-left:103px;
+}
+.wrapper .header .login{
+	margin-left:312px;
+}
+
+
+
+
+
+.wrapper .header div .login{
+	font-size:20px;
+	color:white;
+	position:absolute;
+	
+}
+.wrapper .header div {
+	
+}
+.wrapper .header div .more{
+	display:none; 
+	margin-left:0px;
+	background-color:white;
+	width:150px;
+	position:relative;
+
+}
+.wrapper .header div .login:hover .more{
+	display:block; 
+}
+.wrapper .header div .login .more:hover > a{
+	background-color:red;
+}
+
+.wrapper .header div  .more a{
+	display:block;
+	color:black;
+	margin-top:10px;
+	padding-left:5px;
+	padding-top:10px;
+	padding-bottom:10px;
+	border:1px solid black;
+	width:194px;
+	
+}
+
+
+
+
+
+.wrapper .header .login span{
+	padding-right:50px;
+	font-size: 18px;
+	color:yellow;
+}
+.wrapper .header .index-active{
+	margin-left:195px;
+}
+
+.wrapper .header .contact-active{
+	margin-left:0x;
+}
+.wrapper .header .login-active{
+	margin-left:309px;
+}
+.wrapper .header .index a{
+	text-decoration:none;
+	font-size:20px;
+	color:white;
+}
+.wrapper .header .login a{
+	font-size:20px;
+	text-decoration: none;
+	color:white;
+}
+
+.wrapper .header .contact a{
+	font-size:20px;
+	text-decoration: none;
+	color:white;
+}
+
+.wrapper .left-bar{
+	float:left;
+	width:20%;
+	border-right: 1px solid ;
+    background-color: #3AC5C9;
+	padding-left: 10px;
+	padding-top: 50px;	
+	border-bottom: 1px solid ;
+	height:931px;
+	border-bottom-right-radius: 17% 5%;
+}
+.wrapper .left-bar .cat{
+	border: 1px solid blue;
+	border-radius: 5%;
+	width: 250px;
+	background-color: #ffff4d;
+	padding-top:10px;
+}
+.wrapper .left-bar .cat span{
+	font-size:25px;
+	padding-top:15px;
+	padding-left:15px;
+	color:blue;
+}
+
+.wrapper .left-bar .cat ul {
+	margin-top: 10px;
+	padding-top:10px;
+	padding-bottom:10px;	
+}
+.wrapper .left-bar .cat ul .noactive a{
+	color: black;
+	text-decoration:none;
+	font-size:20px;
+}
+.wrapper .left-bar .cat ul .noactive{
+	padding:5px 33px 5px;
+}
+.wrapper .left-bar .cat ul .active{
+	padding:5px 33px 5px;
+}
+.wrapper .left-bar .cat ul .active a{
+	color: red;
+	text-decoration:none;
+	font-size:20px;
+
+}
+
+.wrapper .left-bar .newjob{
+	border: 1px solid blue;
+	border-radius: 5%;
+	width: 250px;
+	margin-top: 50px;
+	margin-bottom:20px;
+	background-color: #ffff4d;
+	padding-top:10px;
+}
+.wrapper .left-bar .newjob span{
+	font-size:25px;
+	padding-top:15px;
+	padding-left:15px;
+	color:blue;
+}
+.wrapper .left-bar .newjob ul{
+	margin-top: 10px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.wrapper .left-bar .newjob ul li{
+	padding:10px 33px 10px;
+}
+.wrapper .left-bar .newjob ul li a{
+	color: black;
+	text-decoration: none;
+	font-size:20px;
+}
+.wrapper .left-bar .newjob ul li p{
+	color: black;
+	text-decoration: none;
+	font-size:15px;
+	margin-top:5px;
+}
+.wrapper .body .keyword{
+	margin-top:50px;
+	
+} 
+.wrapper .body .keyword a{
+	text-decoration:none;
+	margin-left: 50px;
+	font-size: 18px;
+	background-color: grey;
+	color: white;	
+	padding: 7px 7px 7px 7px;
+	border-radius: 15%;
+}
+.wrapper .body .keyword span{
+	font-size:20px;
+	border: 1px solid black ;
+	font-weight: bold;
+	padding: 7px 7px 7px 7px;
+} 
+
+
+
+.wrapper .body{
+	float:right;
+	width:78%;
+}
+.wrapper .body .news ul .info span{
+	font-weight:bold; 
+	font-size:18px
+}
+.wrapper .body  .news ul .info{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.wrapper .body  .news ul .detail{
+	margin-left:280px;
+	font-size:18px; 
+	background-color:#FDCE09;
+	width:85px; 
+	padding:7px 7px 7px 7px;
+	
+}
+.wrapper .body  .news ul .detail a{
+	text-decoration:none;
+	color:black;
+	font-weight:bold;
+}
+
+.wrapper .body  .news ul .info span{
+	font-weight:bold;
+}
+.wrapper .body  .news ul .title #vote{
+	margin-left: 100px;
+	font-size:18px;
+}
+.wrapper .body  .news ul a{
+	text-decoration:none;
+	
+}
+.wrapper .body  .news ul  .info a{
+	text-decoration:none;
+	
+}
+.wrapper .body  .news ul .title #vote a {
+	text-decoration:none;
+}
+.wrapper .body  .news ul .title #vote a i{
+	font-size:36px;
+}
+.wrapper .body .news ul{
+	background-color: #e6faff;
+	border-top-right-radius: 5% 16%;
+	width:945x;
+	padding: 10px 10px 10px 10px;
+	margin-bottom: 30px;
+    
+}
+.wrapper .body .news .title span{
+	
+	
+}
+.wrapper .body .searchframe {
+	margin-top:100px;
+	margin-bottom:100px;
+}
+.wrapper .body .searchframe #form{
+	margin-top:50px;
+	margin-left:180px;
+}
+.wrapper .body .searchframe #form #searchtitle{
+	font-size:20px;
+	width:473px;
+}
+.wrapper .body .searchframe #form #searchadress{
+	font-size:20px;
+	width:200px;
+}
+.wrapper .body .searchframe #form button{
+	font-size:20px;
+}
+.wrapper .body .allnews .news  {
+	margin-top: 20px;
+	background-color: #F5FCFF;
+	width:967px;
+	padding-bottom:10px;
+	padding-top:10px;
+	padding-left:10px;
+	border-top-right-radius: 5% 16%;
+}
+
+.wrapper .body .allnews .news div{
+}
+.wrapper .body .allnews .news div .right{
+	float:right;
+	width:100%;
+}
+.wrapper .body .allnews .news  div .left{
+	float:left;
+	width:0%;
+}
+.wrapper .body .allnews .news  div .left img{
+	width:117px;
+	height:83px;
+}
+.wrapper .body .allnews .news  div .right ul li{
+	font-size:20px;
+}
+.wrapper .body .allnews .news   .title a{
+	text-decoration:none;
+	font-size:20px;
+	font-weight:bold;
+}
+.wrapper .body .allnews .news   .title {
+	margin-top:0px;
+}
+
+.wrapper .body .allnews .news  ul .right .info{
+	font-size:17px;
+	margin-left:10px;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+.wrapper .body .page{
+	margin-top:41px;
+	margin-left:1000px;
+}
+.wrapper .body .page a{
+	text-decoration:none;
+	font-size:20px;
+}
+.wrapper .body .page .active{
+	border: 1px solid;
+	background-color:#E6E6E6;
+	font-size:20px;
+	font-weight:bold
+}
+.wrapper .body .cat{
+	margin-top:20px;
+} 
+.wrapper .body .cat span{
+	font-size:25px;
+	font-weight:bold;
+} 
+.wrapper .body .cat span a{
+	font-size:25px;
+	font-weight:bold;
+	text-decoration:none;
+	color:red;
+} 
+.wrapper .body div .comment{
+	margin-top:50px;
+	width:700px;
+}
+.wrapper .body div .comment input{
+	font-size: 15px;
+}
+.wrapper .body div .comment a{
+	text-decoration: none;
+	font-size:17px;
+}
+
+.wrapper .body .ajax-data{
+	border:1px dotted green";
+} 
+.wrapper .body .ajax-data div{
+	padding-bottom:8px ;
+}
+.wrapper .body .ajax-data div .name{
+	font-size:15px; font-weight:bold;  
+}
+.wrapper .body .ajax-data div .mess{
+	 padding-left:50px; font-size:15px;
+}
+.wrapper .body .title{
+	font-size:25px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.wrapper .body .addForm #form{
+
+	
+}
+.wrapper .body .addForm #form .addContact{
+	padding-top:15px;
+}
+.wrapper .body .addForm #form button{
+	margin-top:15px;
+	font-size:17px;
+}
+.wrapper .body .addForm #form label{
+	font-size:17px;
+	
+}
+.wrapper .body .addForm #form input{
+	font-size:17px;
+	width:500px;
+}
+.wrapper .body .addForm #form textarea{
+	font-size:17px;
+	width:500px;
+	height:100px;
+}
+.wrapper .header .index-active a{
+	padding-left: 200px;
+	font-size:20px;
+	text-decoration:none;
+	color:red;
+}
+.wrapper .header .login-active a{
+	font-size:20px;
+	padding-left: 388px;
+	text-decoration:none;
+	color:red;
+}
+.wrapper .header .postnews-active a{
+	font-size:20px;
+	padding-left: 120px;
+	text-decoration:none;
+	color:red;
+}
+.wrapper .header .contact-active a{
+	font-size:20px;
+	padding-left: 100px;
+	color:white;
+	text-decoration:none;
+	color:red;
+}
+.wrapper .header span a:hover{
+	color:red;
+	transition: all 0.3s ease-in-out;
+}
+.wrapper .left-bar .cat ul li a:hover{
+	color:red;
+	transition: all 0.3s ease-in-out;
+}
+.wrapper .left-bar .newjob ul li a:hover{
+	color:red;
+	transition: all 0.3s ease-in-out;
+}
+
+
+.wrapper .footer{
+	background-color: #C1C1C1; 
+	height: 106px;
+	padding-top:50px;
+	margin-top:20px;
+}
+.wrapper .footer span{
+	font-size: 20px;
+	padding-left:606px;
+}
+.clr{clear:both}

@@ -1,0 +1,50 @@
+<%@page import="util.AuthUtil"%>
+<%@page import="model.bean.Comment"%>
+<%@page import="model.bean.News"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="/templates/public/inc/header.jsp"%>
+<%@ include file="/templates/public/inc/left-bar.jsp"%>
+
+
+
+
+<div class="body">
+	<%
+		String err = request.getParameter("err");
+	String msg = request.getParameter("msg");
+	if ("1".equals(err)) {
+		out.print(
+		"<span style=\"background: yellow; color: red; font-weight: bold; padding: 5px; \">ID không tồn tại - Không tồn tại đối tượng </span>");
+	}
+	if ("4".equals(err)) {
+		out.print(
+		"<span style=\"background: yellow; color: red; font-weight: bold; padding: 5px; \">Không tìm thấy user trên Database</span>");
+	}
+	if ("5".equals(err)) {
+		out.print(
+		"<span style=\"background: yellow; color: red; font-weight: bold; padding: 5px; \">Sửa người dùng thất bại</span>");
+	}
+	if ("3".equals(msg)) {
+		out.print(
+		"<span style=\"background: yellow; color: blue; font-weight: bold; padding: 5px; \">Sửa người dùng thành công </span>");
+	}
+	%>
+	<div class="cat">
+		<span>Thông tin người dùng</span>
+	</div>
+	<div class="news">
+		<ul>
+			<li class="info"><span>ID:</span> <%=userLogin.getId()%></li>
+			<li class="info"><span>UserName:</span> <%=userLogin.getUsername()%></li>
+			<li class="info"><span>PassWord:</span> <%=userLogin.getPassword()%></li>
+			<li class="info"><span>FullName:</span> <%=userLogin.getFullname()%></li>
+			<li class="info"><span>Email:</span> <%=userLogin.getEmail()%></li>
+			<li class="info"><span>Chức vụ:</span> <%if(1 == userLogin.getRole().getId()) out.print("Admin");%></li>
+			<li class="info"><span>Chức năng:</span></li>
+		</ul>
+	</div>
+</div>
+<div class="clr"></div>
+<%@ include file="/templates/public/inc/footer.jsp"%>

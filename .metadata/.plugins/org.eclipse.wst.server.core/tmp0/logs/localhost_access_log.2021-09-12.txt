@@ -1,0 +1,14 @@
+127.0.0.1 - - [12/Sep/2021:07:54:41 +0700] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:42 +0700] "GET /cvietnamwork/index HTTP/1.1" 200 8350
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:42 +0700] "GET /cvietnamwork/templates/public/assets/css/style/style.css HTTP/1.1" 200 8356
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:42 +0700] "GET /cvietnamwork/templates/public/assets/js/jquery.validate.min.js HTTP/1.1" 200 24430
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:42 +0700] "GET /cvietnamwork/templates/public/assets/css/reset/reset.css HTTP/1.1" 200 895
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:42 +0700] "GET /cvietnamwork/templates/public/images/slide0.jpg HTTP/1.1" 200 272344
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:43 +0700] "GET /favicon.ico HTTP/1.1" 404 684
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:44 +0700] "GET /cvietnamwork/templates/public/images/slide1.jpg HTTP/1.1" 200 75484
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:45 +0700] "GET /cvietnamwork/templates/public/images/slide2.jpg HTTP/1.1" 200 7741
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:47 +0700] "GET /cvietnamwork/login?display=public HTTP/1.1" 200 1113
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:47 +0700] "GET /cvietnamwork/templates/admin/assets/css/style/styleLogin.css HTTP/1.1" 200 808
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:47 +0700] "GET /cvietnamwork/templates/admin/assets/css/reset/reset.css HTTP/1.1" 200 895
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:55 +0700] "POST /cvietnamwork/login?display=public HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Sep/2021:07:54:55 +0700] "GET /cvietnamwork/index HTTP/1.1" 200 8377

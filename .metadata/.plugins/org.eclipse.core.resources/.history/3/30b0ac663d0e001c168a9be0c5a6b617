@@ -1,0 +1,21 @@
+<%@page import="model.bean.User"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" trimDirectiveWhitespaces="true"%>
+
+<div class="left-bar">
+<%
+	String active = request.getParameter("active");
+	User userLogin = (User) session.getAttribute("userLogin");
+	if(userLogin != null){
+		if(1 == userLogin.getRole().getId() || 2 == userLogin.getRole().getId()){
+%>
+	<div class="index<%if("1".equals(active)) out.print("-active");%>"> <a href="<%=request.getContextPath()%>/admin/index?active=1"><i class="fa fa-home"></i> Trang chủ</a> </div>
+	<div class="cat<%if("2".equals(active)) out.print("-active");%>"> <a href="<%=request.getContextPath()%>/admin/cats?active=2"><i class="fa fa-list"></i> Danh mục</a> </div>
+	<div class="user<%if("3".equals(active)) out.print("-active");%>"> <a href="<%=request.getContextPath()%>/admin/users?active=3"><i class="fa fa-user"></i> Người dùng</a> </div>
+	<div class="news<%if("4".equals(active)) out.print("-active");%>"> <a href="<%=request.getContextPath()%>/admin/news?active=4"><i class="fa fa-newspaper-o"></i> Tin tuyển dụng</a> </div>
+	<div class="contact<%if("5".equals(active)) out.print("-active");%>"> <a href="<%=request.getContextPath()%>/admin/contacts?active=5"><i class="fa fa-envelope"></i> Liên hệ</a> </div>
+	<div class="comment<%if("6".equals(active)) out.print("-active");%>"> <a href="<%=request.getContextPath()%>/admin/comments?active=6"><i class="fa fa-commenting"></i> Bình luận</a> </div>
+<%}else{%>
+
+<%} %>	
+</div>	

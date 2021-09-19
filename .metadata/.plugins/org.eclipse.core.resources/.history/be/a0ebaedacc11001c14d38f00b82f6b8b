@@ -1,0 +1,146 @@
+<%@page import="model.dao.VoteDAO"%>
+<%@page import="util.AuthUtil"%>
+<%@page import="model.bean.Comment"%>
+<%@page import="model.bean.News"%>
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/templates/public/inc/header.jsp" %>
+<%@ include file="/templates/public/inc/left-bar.jsp" %>
+			<div class="body">
+			<%
+				News news = (News) request.getAttribute("news");
+				int like = (Integer) request.getAttribute("like");
+// 				String check = (String) request.getAttribute("check");
+			%>
+				<div class="cat">
+					<span>Tuyển dụng ngành <%=news.getCategory().getName() %> </span>
+				</div>
+				<div class="news">
+					<ul>
+						<li class="title">
+							<span><%=news.getTitle() %></span>
+							<span id="vote"> 
+<%-- 							<%if("0".equals(check) ){%>													<!--chưa like --> --%>
+<!-- 								<a href="javascript:void(0)" onclick="return getStatus(1)">  -->
+<!-- 									<i class="fa fa-thumbs-o-up"></i> -->
+<!-- 								</a> -->
+<%-- 								<%=like %> --%>
+<%-- 							<%}else{ %>	 --%>
+								<a href="javascript:void(0)" onclick="return getStatus(0)"> 
+									<i class="fa fa-thumbs-o-up"></i>
+								</a>
+								<%=like %>
+<%-- 							<%} %> --%>
+							</span>
+						</li>
+						<li class="info"><span>Đăng ngày: </span> <%=news.getDate() %></li>
+						<li class="info"><span>Công ty: </span> <%=news.getCorporatename() %></li>
+						<li class="info"><span>Địa chỉ: </span><%=news.getAdress() %></li>
+						<li class="info"><span>Yêu cầu: </span><%=news.getJobrequest() %></li>
+						<li class="info"><span>Mô tả công việc: </span><%=news.getJd() %> </li>
+						<li class="info">
+							<span>Lương: </span>
+							<%if(userLogin != null){ 
+								out.print(news.getSalary() + "$"); 
+							  }else{%> 
+							  <a href="<%=request.getContextPath()%>/login?display=public" style="color:red">Đăng nhập để xem lương</a>
+							<%} %>
+						</li>
+						<li class="info"><span>Email: </span><%=news.getEmail() %></li>
+					</ul>
+					
+				</div>
+				<div class="keyword">
+					<span>Từ khóa</span>
+					<%if(news.getCategory().getId() == 1){ %>
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=it&searchadress=">It</a>
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=java&searchadress=">Java</a> 
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=php&searchadress=">PHP</a> 
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=php&searchadress=">Python</a> 
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=intern&searchadress=">Intern</a> 
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=fresher&searchadress=">Fresher</a> 
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=senior&searchadress=">Senior</a> 
+					<%} %>
+					<%if(news.getCategory().getId() == 2){ %>
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=bác sĩ&searchadress=">Bác sĩ</a>
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=dược sĩ&searchadress=">Dược sĩ</a> 
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=da liễu&searchadress=">Da liễu</a> 
+					<%} %>	
+					<%if(news.getCategory().getId() == 6){ %>
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=Marketing content&searchadress=">Marketing content</a>
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=sale&searchadress=">Sale</a> 
+						<a href="<%=request.getContextPath() %>/search?active=0&searchtitle=manager&searchadress=">Kinh doanh</a> 
+					<%} %>		
+				</div>
+ <!-- ajax comment============================================= -->
+<div>
+	<form class="comment">
+			<input type="text" value="<%if(userLogin != null){out.print(userLogin.getFullname());}%>" name="fullname" required="required" id="fullname"  disabled/> <br /> <br />
+			<input type="text" value="" placeholder="Nhập bình luận" name="message" id="message" required="required" /> 
+			<a href="javascript:void(0)" title="" class="btn" 	onclick="return getComment()"  >Bình luận</a>
+	</form>
+</div>
+<br />
+<div class="ajax-data" >
+	<%
+		if(request.getAttribute("listcmt") != null){
+			ArrayList<Comment> listcmt =  (ArrayList<Comment>) request.getAttribute("listcmt");
+			for(Comment item: listcmt){
+	%>
+		<div >
+			<span class="name" ><%=item.getUser().getFullname() %></span>
+			<span class="mess"><%=item.getMessage()%></span>  
+		</div>
+	<%}}else{ %>
+		<p >Hãy bình luận</p>
+	<%} %>
+</div>
+<script type="text/javascript"> 
+	function getComment(){
+		var message = $('#message').val();
+		var fullname = $('#fullname').val();
+		$.ajax({
+			url: '<%=request.getContextPath()%>/comment?news_id=<%=news.getId()%>&user_id=<% if(AuthUtil.checkLogin(request, response)) {
+																								out.print(userLogin.getId());
+																							   }else{out.print(0);}%>',
+			type : 'POST',			 
+			cache : false,
+			data : {
+				afullname: fullname,
+				amessage: message
+			},
+			success : function(data) {
+				$(".ajax-data").html(data);	
+			},
+			error: function() {
+				alert('Có lỗi xảy ra!');
+			}
+		});
+	return false;
+	}
+		
+	function getStatus(status){
+		$.ajax({
+			url: '<%=request.getContextPath()%>/vote?news_id=<%=news.getId()%>&user_id=<% if(AuthUtil.checkLogin(request, response)) {
+																								out.print(userLogin.getId());
+																							   }else{out.print(0);}%>',
+			type: 'POST',
+			cache: false,
+			data: {	
+					astatus: status
+			},
+			success: function(data){			//sử lý thành công
+				$("#vote").html(data);
+			},
+			error: function (){					//xử lý lỗi
+				alert('Có lỗi xảy ra');
+			}
+		});
+	return false;
+	}
+</script>
+<!-- ============================================================== -->
+			</div>
+			<div class="clr"></div>
+<%@ include file="/templates/public/inc/footer.jsp" %>

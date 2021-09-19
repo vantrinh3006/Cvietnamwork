@@ -1,0 +1,49 @@
+.wrapper{
+	
+}
+.wrapper .header{
+	background: #00B9F2;
+	height:62px;
+	font-size:32px;
+	padding-left:20px;
+	padding-top:15px;
+	color:white;
+}
+.wrapper .header a{
+	text-decoration:none;
+	color:white;
+}
+.wrapper .bodyLogin{
+	margin: 50px auto ;
+	border: 1px solid;
+	height:535px;
+	width:411px;
+	text-align: center;
+	background-color: #81F79F;
+}
+.wrapper .bodyLogin .login{
+}
+.wrapper .bodyLogin h1{
+	margin-top:50px;
+}
+.wrapper .bodyLogin form{
+	
+}
+.wrapper .bodyLogin form div{
+	margin-top:50px;
+}
+.wrapper .bodyLogin form div label{
+	font-size:20px;
+}
+.wrapper .bodyLogin form div input{
+	font-size:20px;;
+}
+.wrapper .bodyLogin form button{
+	font-size:20px;
+	margin-top: 20px;
+}
+.wrapper .bodyLogin .signup{
+	padding-top:20px;
+	font-size:14px;
+	opacity: 0.5;
+}

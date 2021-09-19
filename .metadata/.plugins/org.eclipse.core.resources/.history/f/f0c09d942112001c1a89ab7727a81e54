@@ -1,0 +1,114 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="/templates/public/inc/header.jsp" %>	
+			<div class="left-bar">
+			</div>
+			<div class="body">
+				<div class="title">Gửi liên hệ đến chúng tôi</div>
+				<%	String err = request.getParameter("err");
+					String msg = request.getParameter("msg");
+					
+					if("1".equals(err)){
+        				out.print("<span style=\"background: yellow; color: red; font-weight: bold; padding: 5px; \">Thêm liên hệ thất bại</span>");
+        			}
+					if("1".equals(msg)){
+        				out.print("<span style=\"background: yellow; color: green; font-weight: bold; padding: 5px; \">Thêm liên hệ thành công </span>");
+        			}
+					
+        		%>
+				<div class="addForm">
+					<form action="" method="post"  id="form" >
+						<div class="addContact">
+							<label for="contactfullname">Fullname</label>	<br >
+							<input type="text" id="contactfullname" value="" name="contactfullname" required="required"/>	
+						</div>	
+						<div class="addContact">
+							<label for="contactemail">Email</label>  <br >
+							<input type="text" id="contactemail" value="" name="contactemail" required="required"/>	
+						</div>
+						<div class="addContact">
+							<label for="contactmessage">Message</label>	<br >
+							<textarea type="text" id="contactmessage" value="" name="contactmessage" required="required"> </textarea>	
+						</div>	
+						<button type="submit" name="submit" >Gửi</button>
+					</form>
+					<script type="text/javascript">	// validate form when submited
+// 						$().ready(function(){
+// 							var validator = $("#form").validate({	// form có id là form
+// 								errorPlacement: function(error, element){	// đoạn này có chức năng hiển thị ra lỗi
+// 									$(element).closest("#form").find("label[for='" + element.attr("id") + "']").append(error);
+// 								},
+// 								errorElement: "span",
+// 								rules:{
+// 									"contactfullname":{
+// 										required: true,	
+// 										minlength: 5,
+// 									},
+// 									"contactemail":{
+// 										required: true,
+// 									},
+// 									"contactmessage":{
+// 										required: true,
+// 									},
+// 								messages: {
+// 									contactfullname:{
+// 										required: " (Hãy nhập tên !)",
+// 									},
+// 									contactemail:{
+// 										required: " (Hãy nhập Emai !)",
+// 									},
+// 									contactmessage:{
+// 										required: " (Hãy nhập lời nhắn !)",
+// 									},
+// 								}
+								
+
+// 								},
+// 							});	
+// 						});
+					
+					$(document).ready(function (){ // tất cả các document mà chúng ta chèn vào trang web đã ready rồi
+						//thì nó sẽ chạy function này , ko cần có tên , ở trong function này có:jquery gọi đến id frmLogin
+						// .validay để có thể validate được form này, tạo ra các luật( rules) và các thông báo (message);
+						//rules và massage là tham số truyền vào của hàm validate
+						$('#form').validate({
+							 //chú ý là dấu phẩy ' , ', kết thúc 1 dòng là dùng dấu phẩy
+							rules:{
+								"contactfullname":{
+									required: true,	
+									minlength: 5,
+								},
+								"contactemail":{
+									required: true,
+								},
+								"contactmessage":{
+									required: true,
+								},
+
+							},
+							messages:{
+								"contactfullname":{
+									required: "vui lòng nhập username",	
+									minlength: "vui lòng nhập ít nhất 5 ký tự",
+								},
+								"contactemail":{
+									required: "Vui lòng nhập giới thiệu",
+								},
+								"contactmessage":{
+									required: "Vui lòng nhập giới thiệu",
+								},
+							}  
+							
+						});
+					}); 
+					
+// 						 $("#form").validate({
+// 							  submitHandler: function(form) {
+// 							    form.submit();
+// 							  }
+// 							 });
+					</script>
+				</div>	
+			</div>
+			<div class="clr"></div>
+<%@ include file="/templates/public/inc/footer.jsp" %>
